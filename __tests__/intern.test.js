@@ -5,7 +5,8 @@
 // intern is an 'extend' of employee
 // intern needs 'school', getSchool(), getRole() overrides employee.
 
-
+const Employee = require('../lib/Employee');
+const Letter = require('../lib/Intern');
 
 
 The first class is an `Employee` parent class with the following properties and methods:

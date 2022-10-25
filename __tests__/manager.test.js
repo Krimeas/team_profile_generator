@@ -5,7 +5,8 @@
 // Manager is an 'extend' of employee
 // Manager needs 'officenumber', getRole() overrides employee.
 
-
+const Employee = require('../lib/Employee');
+const Letter = require('../lib/Manager');
 
 
 The first class is an `Employee` parent class with the following properties and methods:

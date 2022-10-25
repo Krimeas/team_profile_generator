@@ -2,6 +2,7 @@
 // child/subclass of 'employee class. 
 // Employee has properties name, id, email to be filled in from inquirer.
 // Employee has getName(), hetId(), getEmail(), getRole(), 
+const Employee = require('../lib/Employee');
 
 
 

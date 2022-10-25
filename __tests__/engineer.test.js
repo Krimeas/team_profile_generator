@@ -5,6 +5,9 @@
 // Engineer is an 'extend' of employee
 // Engineer needs 'github', getGithub(), getRole() overrides employee.
 
+const Employee = require('../lib/Employee');
+const Letter = require('../lib/Engineer');
+
 
 
 
