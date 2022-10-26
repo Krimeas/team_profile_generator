@@ -4,29 +4,56 @@
 // Employee has getName(), hetId(), getEmail(), getRole(), 
 // Manager is an 'extend' of employee
 // Manager needs 'officenumber', getRole() overrides employee.
+const jest = require('jest')
 
 const Employee = require('../lib/Employee');
-const Letter = require('../lib/Manager');
+const Manager = require('../lib/Manager');
+
+const nameManager = new Manager('Krim', '42', 'finalFantasy@gamil.com', '888675309')
 
 
-The first class is an `Employee` parent class with the following properties and methods:
+describe("employee class", () => {
+  describe("Employee class methods", () => {
+    it("gets name", () => {
+      expect(nameManager.getName()).toBe('Krim');
+    });
+    it("gets id", () => {
+      expect(nameManager.getId()).toBe("42");
+    });
+    it("gets email", () => {
+      expect(nameManager.getEmail()).toBe('finalFantasy@gamil.com');
+    });
+    it("gets officenumber", () => {
+      expect(nameManager.getOfficeNumber()).toBe('888675309');
+    });
+    it("gets role", () => {
+      expect(nameManager.getRole()).toBe('manager');
+    });
+  });
+});
 
-* `name`
 
-* `id`
 
-* `email`
 
-* `getName()`
 
-* `getId()`
+// The first class is an `Employee` parent class with the following properties and methods:
 
-* `getEmail()`
+// * `name`
 
-* `getRole()`&mdash;returns `'Employee'`
+// * `id`
 
-Manager subclass
+// * `email`
 
-* `officeNumber`
+// * `getName()`
 
-* `getRole()`&mdash;overridden to return `'Manager'`
+// * `getId()`
+
+// * `getEmail()`
+
+// * `getRole()`&mdash;returns `'Employee'`
+
+// Manager subclass
+
+// * `officeNumber`
+
+// * `getRole()`&mdash;overridden to return `'Manager

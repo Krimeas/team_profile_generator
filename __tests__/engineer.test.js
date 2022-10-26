@@ -4,33 +4,57 @@
 // Employee has getName(), hetId(), getEmail(), getRole(), 
 // Engineer is an 'extend' of employee
 // Engineer needs 'github', getGithub(), getRole() overrides employee.
+const jest = require('jest')
 
 const Employee = require('../lib/Employee');
-const Letter = require('../lib/Engineer');
+const Engineer = require('../lib/Engineer');
+
+
+const nameEngineer = new Engineer('Krim', '42', 'finalFantasy@gamil.com', 'Krimeas.github.com')
+
+
+describe("employee class", () => {
+  describe("Employee class methods", () => {
+    if("gets name", () => {
+      expect(nameEngineer.getName()).toBe('Krim');
+    });
+    if("gets id", () => {
+      expect(nameEngineer.getId()).toBe("42");
+    });
+    if("gets email", () => {
+      expect(nameEngineer.getEmail()).toBe('finalFantasy@gamil.com');
+    });
+    if("gets github", () => {
+      expect(nameEngineer.getGithub()).toBe('Krimeas.github.com');
+    });
+    if("gets role", () => {
+      expect(nameEngineer.getRole()).toBe('Engineer');
+    });
+  });
+});
 
 
 
+// The first class is an `Employee` parent class with the following properties and methods:
 
-The first class is an `Employee` parent class with the following properties and methods:
+// * `name`
 
-* `name`
+// * `id`
 
-* `id`
+// * `email`
 
-* `email`
+// * `getName()`
 
-* `getName()`
+// * `getId()`
 
-* `getId()`
+// * `getEmail()`
 
-* `getEmail()`
+// * `getRole()`&mdash;returns `'Employee'`
 
-* `getRole()`&mdash;returns `'Employee'`
+// Engineer subclass
 
-Engineer subclass
+// * `github`&mdash;GitHub username
 
-* `github`&mdash;GitHub username
+// * `getGithub()`
 
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
+// * `getRole()`&mdash;overridden to return `'Engineer'`

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Krimeas/team_profile_generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4",
-    "jest": "^24.8.0"
+    "inquirer-loop": "^0.3.0",
+    "jest": "^24.9.0"
   }
 }
