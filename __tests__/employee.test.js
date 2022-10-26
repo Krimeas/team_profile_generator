@@ -4,11 +4,15 @@
 // Employee has getName(), hetId(), getEmail(), getRole(), 
 const jest = require('jest')
 
+// pulls from lib folder employee class.
 const Employee = require('../lib/Employee');
 
+// test variable for passing test below.
 const nameEmployee = new Employee('Krim', '42', 'finalFantasy@gamil.com')
 
 
+// start of test running basic employee class.  
+// needs Arrange and Act, only Asert below?
 describe("employee class", () => {
   describe("Employee class methods", () => {
     if("gets name", () => {
@@ -27,6 +31,7 @@ describe("employee class", () => {
 
 
 
+// topics List from assigned tasks
 
 // The first class is an `Employee` parent class with the following properties and methods:
 

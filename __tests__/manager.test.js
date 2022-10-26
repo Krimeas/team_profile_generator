@@ -6,12 +6,15 @@
 // Manager needs 'officenumber', getRole() overrides employee.
 const jest = require('jest')
 
+// Pulls from lib folder employee & Manager classs.
 const Employee = require('../lib/Employee');
 const Manager = require('../lib/Manager');
 
+// test variable for passing test below, includes Manager specific office phone number.
 const nameManager = new Manager('Krim', '42', 'finalFantasy@gamil.com', '888675309')
 
-
+// start of test running Manager extended/sub class.   
+// needs Arrange and Act, only Asert below?
 describe("employee class", () => {
   describe("Employee class methods", () => {
     it("gets name", () => {
@@ -35,6 +38,7 @@ describe("employee class", () => {
 
 
 
+// topics List from assigned tasks
 
 // The first class is an `Employee` parent class with the following properties and methods:
 

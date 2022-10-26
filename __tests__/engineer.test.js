@@ -6,13 +6,16 @@
 // Engineer needs 'github', getGithub(), getRole() overrides employee.
 const jest = require('jest')
 
+// Pulls from lib folder employee & Engineer classs.
 const Employee = require('../lib/Employee');
 const Engineer = require('../lib/Engineer');
 
-
+// test variable for passing test below, includes Engineer specific github.
 const nameEngineer = new Engineer('Krim', '42', 'finalFantasy@gamil.com', 'Krimeas.github.com')
 
 
+// start of test running Engineer extended/sub class.  
+// needs Arrange and Act, only Asert below?
 describe("employee class", () => {
   describe("Employee class methods", () => {
     if("gets name", () => {
@@ -34,6 +37,8 @@ describe("employee class", () => {
 });
 
 
+
+// topics List from assigned tasks
 
 // The first class is an `Employee` parent class with the following properties and methods:
 

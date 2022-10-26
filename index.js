@@ -1,14 +1,15 @@
+// required external npm modules/files
+
 const inquirer = require('inquirer')
 const fs = require('fs')
 
+// required files generated in other folders.
 
-// other files
-
-// needs to everythign at once to HTML File in correct formatting.
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 const StartHTML = require('./lib/StartHTML')
+
 
 // Build initial prompt that when you enter a team memebers type, it starts that Prompt/function.
 // startPopulation should write the initial HTML file. 
@@ -18,10 +19,12 @@ const StartHTML = require('./lib/StartHTML')
 // append js file and bring const over?
 //make sure is in proper format.
 
+// UPDATE: needs to everythign at once to HTML File in correct formatting.
+
 // my team array pushing to script.js file for appending to HTML via standard JS.
 const myTeam = [];
 
-//new member function, runs on start.  Prompts to answer what type of employee.  depending on answer, fires off a function, for each employee type, or creates HTML with answers stroed int he array.  
+//new member function, runs on start.  Prompts to answer what type of employee.  Depending on answer, fires off a function, for each employee type, or creates HTML with answers stored in the array if answer is 'no' they do not want to add another employee.  
 const newMember = () => {
   inquirer.prompt([
     {
@@ -52,7 +55,7 @@ const newMember = () => {
 
 }
 
-//create manager function includes manager specific employee question then pushes andswrrs to myTeam array.
+//create manager function includes manager specific employee question then pushes 'newManager' answers to myTeam array. newMember() added to refire/loop into the origin function for continuing to add employees to myTeam array.
 const createManager = () => {
   inquirer
     .prompt([
@@ -84,7 +87,7 @@ const createManager = () => {
     });
 }
  
-//create manager function includes Engineer specific employee question then pushes andswrrs to myTeam array.
+//create manager function includes Engineer specific employee question then pushes 'newEngineer' answers to myTeam array. newMember() added to refire/loop into the origin function for continuing to add employees to myTeam array.
 const createEngineer = () => {
   inquirer
     .prompt([
@@ -115,7 +118,7 @@ const createEngineer = () => {
     });
 }
 
-//create manager function includes Intern specific employee question then pushes andswrrs to myTeam array.
+//create manager function includes Intern specific employee question then pushes 'newIntern' answers to myTeam array. newMember() added to refire/loop into the origin function for continuing to add employees to myTeam array.
 const createIntern = () => {
   inquirer
     .prompt([
@@ -146,16 +149,19 @@ const createIntern = () => {
     });
 }
 
-// HTML File should take input from these and then write larger HTML file, this will only write the starterHTMl.  Need to get it to apply the answers to the prompts to append to an script.js which will then append data into the generated HTML.  Link included to script.js on HTML file.  Formal in Bootstrap.
+// Clicking no on request for employee type will exit function and write files.  
+// HTML File should take input from these and then write larger HTML file, this will only write the starterHTMl.  Need to get it to apply the answers to the prompts to append to an script.js which will then append data into the generated HTML.  Link included to script.js on HTML file.  Formal in Bootstrap. 
 const createHTML = () => {
   fs.writeFile('./dist/index.html', StartHTML, 'UTF-8', (err) => {
     (err) ? console.log(err) : console.log("sucess!")
   })
   // append file to script.js not completed.  Says myTeam: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Array
+  // Maybe should do same as HTML and have a basic startJS that writes the script.js with data provided from questions?
   fs.appendFile('./dist/script.js', myTeam, 'UTF-8', (err) => {
     (err) ? console.log(err) : console.log("sucess!")
   })
 }
 
 
+// starts the new member function which will initialize other functions after answering the original question what type of employee.  Clicking no will exit function and write files.  
 newMember();
